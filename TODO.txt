@@ -1,0 +1,16 @@
+MVP
+
+[x] time-logger start
+[x] -- prompt for ticket number
+
+OR
+
+[x] time-logger -t "<ticketNumber>"
+
+
+[x] while running display clock
+[x] hit SPACE to stop clock
+
+prompt? log X hours to <ticketNumber> y/n
+
+
