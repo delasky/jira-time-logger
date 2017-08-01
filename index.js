@@ -6,25 +6,66 @@ const program = require('commander')
 
 const pkg = require('./package.json')
 const track = require('./lib/track.js')
+const updateJira = require('./lib/update_jira')
 
 program
     .version(pkg.version)
-    .option('-t, --ticket <ticket>', 'ticket number to log time against')
-
-program.parse(process.argv)
-
-if (program.ticket) {
-    console.log('i have ticket number', program.ticket)
-    track(program.ticket)
-} else {
-    let question = {
-        type: 'input',
-        name: 'ticket',
-        message: "Please enter the ticket number you want to log time against"
-    }
-    inquirer.prompt([question]).then(function(answers) {
-        console.log(answers)
-        track(answers.ticket)
+    .command('track')
+    .description('keeps track of time')
+    .option('-j, --jira <jira>', 'ticket number to log time against')
+    .action(options => {
+        if (options.jira) {
+            track(options.jira)
+        } else {
+            let question = {
+                type: 'input',
+                name: 'jira',
+                message: "Please enter the ticket number you want to log time against"
+            }
+            inquirer.prompt([question]).then(function(answers) {
+                track(answers.jira)
+            })
+        }
     })
 
-}
+program
+    .version(pkg.version)
+    .command('log')
+    .description('directly log time against a ticket')
+    .option('-j, --jira <ticket>', 'ticket number to log time against')
+    .option('-t, --time <phrase>', 'time in jira format to be logged')
+    .action((options) => {
+
+        let questions = [];
+        if (!options.jira) {
+            let jiraQ = {
+                type: 'input',
+                name: 'jira',
+                message: "Please enter the ticket number you want to log time against"
+            }
+            questions.push(jiraQ)
+        }
+        if (!options.time) {
+            let timeQ = {
+                type: 'input',
+                name: 'time',
+                message: "Please enter the time you want to log"
+            }
+            questions.push(timeQ)
+        }
+
+
+        if (questions.length > 0) {
+            inquirer.prompt(questions)
+                .then((answers) => {
+                    let jira = options.jira || answers.jira
+                    let time = options.time || answers.time
+                    updateJira(time, jira)
+                })
+                .catch(err=>console.log(err))
+        } else {
+            updateJira(options.time, options.jira)
+        }
+    })
+
+program.parse(process.argv)
