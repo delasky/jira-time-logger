@@ -12,5 +12,11 @@ OR
 [x] hit SPACE to stop clock
 
 prompt? log X hours to <ticketNumber> y/n
+[x]
+
+
+NEXT STEP
+
+add config route to save jira credentials
 
 
