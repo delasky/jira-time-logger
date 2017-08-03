@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const blessed = require('blessed')
 const commander = require('commander')
 const inquirer = require('inquirer')
