@@ -39,7 +39,7 @@ program
 program
     .version(pkg.version)
     .command('track')
-    .description('keeps track of time')
+    .description('keeps track of time, use flag -j or --jira "<TICKET NUMBER>" to specify ticket number without prompt')
     .option('-j, --jira <jira>', 'ticket number to log time against')
     .action(options => {
         if (options.jira) {
@@ -59,7 +59,7 @@ program
 program
     .version(pkg.version)
     .command('log')
-    .description('directly log time against a ticket')
+    .description('directly log time against a ticket. user flag -j to include ticket number and flag -t to include time string. otherwise, you will be prompted for this information')
     .option('-j, --jira <ticket>', 'ticket number to log time against')
     .option('-t, --time <phrase>', 'time in jira format to be logged')
     .action((options) => {
