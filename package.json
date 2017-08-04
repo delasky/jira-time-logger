@@ -1,5 +1,5 @@
 {
-  "name": "log-time",
+  "name": "@hotschedules/log-time",
   "version": "0.0.2",
   "description": "Jira time logging cli",
   "main": "index.js",
