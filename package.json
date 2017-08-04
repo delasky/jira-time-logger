@@ -1,17 +1,17 @@
 {
   "name": "log-time",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Jira time logging cli",
   "main": "index.js",
   "author": "Daniel Olasky <daniel.olasky@hotschedules.com>",
   "license": "MIT",
   "bin": {
-      "log-time": "./index.js"
+    "log-time": "./index.js"
   },
   "dependencies": {
     "blessed": "^0.1.81",
     "commander": "^2.11.0",
-    "fs-extra": "^3.0.1",
+    "fs-extra": "^4.0.1",
     "inquirer": "^3.2.1",
     "moment": "^2.18.1",
     "request": "^2.81.0"

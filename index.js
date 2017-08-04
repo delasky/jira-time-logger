@@ -9,6 +9,32 @@ const program = require('commander')
 const pkg = require('./package.json')
 const track = require('./lib/track.js')
 const updateJira = require('./lib/update_jira')
+const writeToConfig = require('./lib/write_to_config')
+
+program
+    .version(pkg.version)
+    .command('config')
+    .description('configure your jira intergration, you should only need to run this once')
+    .action(() => {
+        let questions = [
+            {
+                type: 'input',
+                name: 'username',
+                message: "Please enter your jira username"
+            },
+            {
+                type: 'password',
+                name: 'password',
+                message: "Please enter your jira password"
+            }
+        ]
+
+        inquirer.prompt(questions)
+            .then((answers) => {
+                writeToConfig(answers)
+            })
+    })
+
 
 program
     .version(pkg.version)
