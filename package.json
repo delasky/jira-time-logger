@@ -1,6 +1,6 @@
 {
   "name": "@hotschedules/log-time",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Jira time logging cli",
   "main": "index.js",
   "author": "Daniel Olasky <daniel.olasky@hotschedules.com>",
