@@ -13,7 +13,10 @@
     "commander": "^2.11.0",
     "fs-extra": "^4.0.1",
     "inquirer": "^3.2.1",
+    "lodash.filter": "^4.6.0",
     "lodash.get": "^4.4.2",
+    "lodash.isset": "^4.4.2",
+    "lodash.pickby": "^4.6.0",
     "moment": "^2.18.1",
     "request": "^2.81.0"
   }

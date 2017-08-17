@@ -307,9 +307,21 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+lodash.filter@^4.6.0:
+  version "4.6.0"
+  resolved "http://rbcplatform.artifactoryonline.com/rbcplatform/api/npm/npm-virtual/lodash.filter/-/lodash.filter-4.6.0.tgz#668b1d4981603ae1cc5a6fa760143e480b4c4ace"
+
 lodash.get@^4.4.2:
   version "4.4.2"
   resolved "http://rbcplatform.artifactoryonline.com/rbcplatform/api/npm/npm-virtual/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+
+lodash.isset@^4.4.2:
+  version "4.4.2"
+  resolved "http://rbcplatform.artifactoryonline.com/rbcplatform/api/npm/npm-virtual/lodash.isset/-/lodash.isset-4.4.2.tgz#d5eecc56b7a97ab588509e4795b3541b1cdb67bb"
+
+lodash.pickby@^4.6.0:
+  version "4.6.0"
+  resolved "http://rbcplatform.artifactoryonline.com/rbcplatform/api/npm/npm-virtual/lodash.pickby/-/lodash.pickby-4.6.0.tgz#7dea21d8c18d7703a27c704c15d3b84a67e33aff"
 
 lodash@^4.3.0:
   version "4.17.4"

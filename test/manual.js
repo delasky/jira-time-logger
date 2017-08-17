@@ -1,5 +1,6 @@
-var update = require('../lib/update_jira.js')
+var get = require('../lib/get_worklogIds_since.js')
 
-update("1m", "ECHO-307")
+get()
+
 
 
